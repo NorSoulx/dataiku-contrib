@@ -22,19 +22,10 @@
             },
             "defaultValue": "Standard_D12_v2",
             "allowedValues": [
-                "Standard_D2_v3",
-                "Standard_D4_v3",
-                "Standard_D8_v3",
+                "Standard_D11_v2",
                 "Standard_D12_v2",
-                "Standard_D16_v3",
-                "Standard_D32_v3",
-                "Standard_D64_v3",
-                "Standard_D2s_v3",
-                "Standard_D4s_v3",
-                "Standard_D8s_v3",
-                "Standard_D16s_v3",
-                "Standard_D32s_v3",
-                "Standard_D64s_v3"       
+                "Standard_D13_v2",
+                "Standard_D14_v2"
             ]
         },
         "applicationName": {
