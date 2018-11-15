@@ -42,6 +42,18 @@
             },
             "defaultValue": "dss"
         },
+        "installScriptUri": {
+            "type": "string",
+            "metadata": {
+                "description": "URI to install script"
+            },
+            "defaultValue": "https://raw.githubusercontent.com/NorSoulx/dataiku-contrib/master/microsoft/solution-templates/hdinsight/scripts/EmptyNodeSetup.sh",
+            "allowedValues": [
+                "https://raw.githubusercontent.com/NorSoulx/dataiku-contrib/master/microsoft/solution-templates/hdinsight/scripts/EmptyNodeSetup.sh",
+                "https://raw.githubusercontent.com/NorSoulx/dataiku-contrib/master/microsoft/solution-templates/hdinsight/scripts/hdinsight-dss-install.sh",
+                "https://raw.githubusercontent.com/NorSoulx/dataiku-contrib/master/microsoft/solution-templates/hdinsight/scripts/hdinsight-dss-automation-node-install.sh"
+            ]
+        },
         "dssVersion": {
             "type": "string",
             "metadata": {
@@ -77,7 +89,7 @@
             },
             "installScriptActions": [{
                 "name": "[concat('dss-install-', parameters('applicationName'))]",
-                "uri": "https://raw.githubusercontent.com/NorSoulx/dataiku-contrib/master/microsoft/solution-templates/hdinsight/scripts/hdinsight-dss-install.sh",
+                "uri": "[parameters('installScriptUri')]",
                 "parameters": "[concat('-version \"', parameters('dssVersion'), '\" -port ', variables('dssPort'))]",
                 "roles": ["edgenode"]
             }],
